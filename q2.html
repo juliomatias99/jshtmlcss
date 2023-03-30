@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <style>
+      #mensagem {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <label for="usuario">Usuário:</label>
+    <input type="text" id="usuario" name="usuario">
+    <br>
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha">
+    <br>
+    <span id="mensagem"></span>
+    <br>
+    <button onclick="validarLogin()">Entrar</button>
+
+    <script>
+      function validarLogin() {
+        const usuario = document.getElementById("usuario").value;
+        const senha = document.getElementById("senha").value;
+        const mensagem = document.getElementById("mensagem");
+
+        if (senha === usuario) {
+          mensagem.textContent = "A senha não pode ser igual ao nome de usuário.";
+        } else {
+          mensagem.textContent = "";
+          alert("Login bem-sucedido!");
+        }
+      }
+    </script>
+  </body>
+</html>

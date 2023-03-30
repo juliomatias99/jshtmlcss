@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Validação de Nota</title>
+    <style>
+      #mensagem {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Validação de Nota</h1>
+    <label for="nota">Digite uma nota entre 0 e 10:</label>
+    <input type="number" id="nota" name="nota" min="0" max="10">
+    <br>
+    <span id="mensagem"></span>
+    <br>
+    <button onclick="validarNota()">Validar Nota</button>
+
+    <script>
+      function validarNota() {
+        const nota = document.getElementById("nota").value;
+        const mensagem = document.getElementById("mensagem");
+
+        if (nota < 0 || nota > 10) {
+          mensagem.textContent = "Nota inválida. Digite um valor entre 0 e 10.";
+        } else {
+          mensagem.textContent = "";
+          alert("Nota válida!");
+        }
+      }
+    </script>
+  </body>
+</html>
+
